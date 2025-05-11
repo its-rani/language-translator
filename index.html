@@ -10,8 +10,6 @@
   <div class="container">
     <h1>
       Language Translator
-    
-      
     </h1>
 
     <div class="translation-container">
@@ -21,8 +19,10 @@
           <div class="selected">Select Input Language</div>
           <ul class="language-options"></ul>
         </div>
-        <textarea id="input-text" placeholder="Enter text to translate"></textarea>
-        <div id="input-chars">0</div>
+        <div class="box input-box">
+  <textarea id="input-text" placeholder="Enter text to translate"></textarea>
+  <div id="input-chars">0</div>
+</div>
       </div>
 
       <!-- Swap Button -->
@@ -36,17 +36,19 @@
           <div class="selected">Select Output Language</div>
           <ul class="language-options"></ul>
         </div>
-        <textarea id="output-text" placeholder="Translated text will appear here" readonly></textarea>
+       <div class="box output-box">
+  <textarea id="output-text" placeholder="Translated text will appear here" readonly></textarea>
+  <div class="output-controls">
+    <button id="speak-btn" class="tooltip">
+      🔊
+      <span class="tooltip-text">Speak Translation</span>
+    </button>
+  </div>
+</div>
+
       </div>
     </div>
 
-
-    <div class="output-controls">
-          <button id="speak-btn" class="tooltip">
-            🔊
-            <span class="tooltip-text">Speak Translation</span>
-          </button>
-        </div>
     <!-- Translate Button -->
     <div class="translate-button-container">
       <button id="translate-btn">Translate</button>

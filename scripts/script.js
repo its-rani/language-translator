@@ -50,6 +50,7 @@ document.addEventListener("click", (e) => {
   });
 });
 
+
 // ========== Translate Button ==========
 // Trigger translation when the translate button is clicked
 document.querySelector("#translate-btn").addEventListener("click", translate);
@@ -87,8 +88,7 @@ function translate() {
     inputLanguageDropdown.querySelector(".selected").dataset.value;
   const outputLanguage =
     outputLanguageDropdown.querySelector(".selected").dataset.value;
-  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURI(
-    inputText,
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURI(inputText,
   )}`;  // Construct API URL for translation
 
   // Fetch translation from Google Translate API
@@ -111,6 +111,15 @@ inputTextElem.addEventListener("input", (e) => {
   translate();  // Trigger translation after input change
 });
 
+// ========== Input Character Count ==========
+// Display the number of characters typed in the input text
+const inputChars = document.querySelector("#input-chars");
+
+inputTextElem.addEventListener("input", (e) => {
+  inputChars.innerHTML = inputTextElem.value.length;  // Update character count display
+});
+
+
 // ========== File Upload Functionality ==========
 // Handle document upload and display uploaded file name
 const uploadDocument = document.querySelector("#upload-document"),
@@ -123,9 +132,9 @@ uploadDocument.addEventListener("change", (e) => {
     file.type === "application/pdf" ||
     file.type === "text/plain" ||
     file.type === "application/msword" ||
-    file.type ===
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-  ) {
+    file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  )
+   {
     uploadTitle.innerHTML = file.name;  // Display file name
     const reader = new FileReader();
     reader.readAsText(file);  // Read file as text
@@ -137,6 +146,7 @@ uploadDocument.addEventListener("change", (e) => {
     alert("Please upload a valid file");  // Alert if the file type is invalid
   }
 });
+
 
 // ========== Download Translated Text ==========
 // Handle downloading the translated text as a text file
@@ -156,6 +166,7 @@ downloadBtn.addEventListener("click", (e) => {
   }
 });
 
+
 // ========== Dark Mode Toggle ==========
 // Toggle dark mode when the checkbox is changed
 const darkModeCheckbox = document.getElementById("dark-mode-btn");
@@ -164,13 +175,6 @@ darkModeCheckbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");  // Toggle dark mode class on the body
 });
 
-// ========== Input Character Count ==========
-// Display the number of characters typed in the input text
-const inputChars = document.querySelector("#input-chars");
-
-inputTextElem.addEventListener("input", (e) => {
-  inputChars.innerHTML = inputTextElem.value.length;  // Update character count display
-});
 
 // ========== Speaker (Text-to-Speech) ==========
 // Convert translated text to speech when the speak button is clicked
