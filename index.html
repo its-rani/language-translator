@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language Translator</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>
+      Language Translator
+    
+      
+    </h1>
+
+    <div class="translation-container">
+      <!-- Input Language Block -->
+      <div class="language-block">
+        <div class="dropdown-container" id="input-language">
+          <div class="selected">Select Input Language</div>
+          <ul class="language-options"></ul>
+        </div>
+        <textarea id="input-text" placeholder="Enter text to translate"></textarea>
+        <div id="input-chars">0</div>
+      </div>
+
+      <!-- Swap Button -->
+      <div class="swap-center">
+        <button class="swap-position" id="swap-btn" title="Swap Languages">⇄</button>
+      </div>
+      
+      <!-- Output Language Block -->
+      <div class="language-block">
+        <div class="dropdown-container" id="output-language">
+          <div class="selected">Select Output Language</div>
+          <ul class="language-options"></ul>
+        </div>
+        <textarea id="output-text" placeholder="Translated text will appear here" readonly></textarea>
+      </div>
+    </div>
+
+    <!-- Translate Button -->
+    <div class="translate-button-container">
+      <button id="translate-btn">Translate</button>
+    </div>
+
+    <!-- Footer Controls -->
+    <div class="footer">
+      <div id="upload">
+        <label id="upload-title">Upload Document</label>
+        <input type="file" id="upload-document" />
+      </div>
+      <button id="download-btn">Download Translation</button>
+      <input type="checkbox" id="dark-mode-btn" />
+      <label for="dark-mode-btn">Dark Mode</label>
+    </div>
+  </div>
+
+  <script src="scripts/language.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
